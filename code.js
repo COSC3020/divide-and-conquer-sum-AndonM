@@ -1,13 +1,13 @@
 function divideAndConquerSort(arr) {
-    if (arr.length <= 1) {
-      return arr;
+    if (arr.length < 1) {
+      return 0;
     } else {
       let oneThird = Math.floor(arr.length / 3);
       let twoThirds = Math.floor((2 * arr.length) / 3);
   
       const left = divideAndConquerSort(arr.slice(0, oneThird));
       const middle = divideAndConquerSort(arr.slice(oneThird, twoThirds));
-      const right = divideAndConquerSort(arr.slice(twoThirds));
+      const right = divideAndConquerSort(arr.slice(twoThirds, arr.length));
   
       return mergeThree(left, middle, right);
     }
