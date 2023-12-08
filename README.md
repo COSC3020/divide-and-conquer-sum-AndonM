@@ -37,10 +37,10 @@ A general pattern emerges which may be generalized as follows:
 
 T(n) = $3^iT(n/3^i)+i$
 
-Recognizing that $log_3n$ gives us the base case for T we get this:
+Recognizing that $log_3(n)$ gives us the base case for T we get this:
 
-T(n) = $3^log_(3)nT(n/3^log_3n)+log_3n$  
-     = $nT(1)+log_3n$  
-     = $n+log_3n \isInE Theta(n)$  
+T(n) = $3^{log_3(n)}T(n/3^{log_3(n)})+log_3(n)$  
+     = $nT(1)+log_3(n)$  
+     = $n+log_3(n) \isInE Theta(n)$  
 
-Giving us a final time complexity of $Theta(n+log_3n)$.
+Giving us a final time complexity of $Theta(n+log_3(n))$.
