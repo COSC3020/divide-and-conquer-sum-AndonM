@@ -20,9 +20,27 @@ that does the actual recursion.
 
 ## Runtime Analysis
 
-What is the runtime of the algorithm that you implemented? Provide a recurrence
-relation for $T(n)$ as we did for merge sort (you can ignore constant factors)
-and solve it as we did in the lectures. Give the final $\Theta$ complexity.
+To begin, let's define our base case as a place to launch from:
+T(n) = 3T(n/3)+1 if n > 2 or T(n) = 1 if n <= 2. (there's nothing to split into sub-arrays)
 
-Describe your reasoning and the conclusion you've come to. Your reasoning is the
-most important part. Add your answer to this markdown file.
+Assuming an array of sufficient size, we are making three recursive calls (3T) and dividing the problem space into one third of it's origianl size (n/3). The +1 accounts for the check to see if the base case has been reached.
+
+Now, let's substitue and reduce where appropriate:
+
+T(n) = 3T(n/3)+1
+     = 3(3T(n/9))+2
+     = 9T(n/9)+2
+     = 9(3T(n/27))+3
+     = 27T(n/27)+3
+
+A general pattern emerges which may be generalized as follows:
+
+T(n) = $\3^iT(n/3^i)+i$
+
+Recognizing that $\log_(3)n$ gives us the base case for T we get this:
+
+T(n) = $\3^log_(3)nT(n/3^log_(3)n)+log_(3)n$
+     = $\nT(1)+log_(3)n$
+     = $\n+log_(3)n \isInE Theta(n)$
+
+Giving us a final time complexity of $\Theta(n+log_(3)n)$.
