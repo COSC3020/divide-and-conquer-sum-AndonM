@@ -27,11 +27,11 @@ Assuming an array of sufficient size, we are making three recursive calls (3T) a
 
 Now, let's substitue and reduce where appropriate:
 
-T(n) = 3T(n/3)+1
-     = 3(3T(n/9))+2
-     = 9T(n/9)+2
-     = 9(3T(n/27))+3
-     = 27T(n/27)+3
+T(n) = 3T(n/3)+1  
+     = 3(3T(n/9))+2  
+     = 9T(n/9)+2  
+     = 9(3T(n/27))+3  
+     = 27T(n/27)+3  
 
 A general pattern emerges which may be generalized as follows:
 
@@ -39,8 +39,8 @@ T(n) = $\3^iT(n/3^i)+i$
 
 Recognizing that $\log_(3)n$ gives us the base case for T we get this:
 
-T(n) = $\3^log_(3)nT(n/3^log_(3)n)+log_(3)n$
-     = $\nT(1)+log_(3)n$
-     = $\n+log_(3)n \isInE Theta(n)$
+T(n) = $3^log_(3)nT(n/3^log_(3)n)+log_3n$  
+     = $nT(1)+log_(3)n$  
+     = $n+log_(3)n \isInE Theta(n)$  
 
-Giving us a final time complexity of $\Theta(n+log_(3)n)$.
+Giving us a final time complexity of $\Theta(n+log_3n)$.
