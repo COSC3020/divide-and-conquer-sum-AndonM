@@ -5,6 +5,6 @@ eval(fs.readFileSync('code.js')+'');
 
 const test =
     jsc.forall("array nat", function(arr) {
-        return JSON.stringify(divideAndConquerSort(arr)) == JSON.stringify(arr.reduce(function(a, b) { return a + b; }, 0));
+        return JSON.stringify(divideAndConquerSum(arr)) == JSON.stringify(arr.reduce(function(a, b) { return a + b; }, 0));
     });
 jsc.assert(test);
