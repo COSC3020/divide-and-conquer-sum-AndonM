@@ -41,6 +41,6 @@ Recognizing that $log_3(n)$ gives us the base case for T we get this:
 
 T(n) = $3^{log_3(n)}T(n/3^{log_3(n)})+log_3(n)$  
      = $nT(1)+log_3(n)$  
-     = $n+log_3(n) \isInE Theta(n)$  
+     = $n+log_3(n) \in theta(n)$  
 
-Giving us a final time complexity of $Theta(n+log_3(n))$.
+Giving us a final time complexity of $theta(n+log_3(n))$.
