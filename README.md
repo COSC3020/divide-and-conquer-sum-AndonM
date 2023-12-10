@@ -43,6 +43,4 @@ T(n) = $3^{log_3(n)}T(n/3^{log_3(n)})+log_3(n)$
      = $nT(1)+log_3(n)$  
      = $n+log_3(n) \in \theta(n)$  
 
-Removing lower order terms, we get a final time-complexity as follows:
-
-$\theta(n)$.
+Removing lower order terms, we get a final time-complexity of $\theta(n)$.
